@@ -1,0 +1,106 @@
+.pod-component {
+  position: absolute;
+  -webkit-transition: all 0.5s ease-in-out;
+
+  background: #FFF;
+  border: 1px solid #04304A;
+
+  .pod-header {
+    display: flex;
+    height: 24px;
+
+    padding: 5px 10px 5px 10px;
+    background: #EFEFEF;
+    border-bottom: 1px solid #04304A;
+
+    .drag-handle {
+      display: flex;
+      width: 24px;
+      height: 20px;
+      border-style: none;
+      outline: none;
+      background: url('assets/drag-handle.svg') 0 0 no-repeat;
+      margin: 3px 10px 0 0;
+      cursor: grabbing;
+
+      &:hover {
+        background: url('assets/drag-handle-over.svg') 0 0 no-repeat;
+      }
+
+      &.disabled {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.2;
+      }
+    }
+
+    .pod-title {
+      font-family: StreetB-Medium;
+      font-size: 14px;
+      color: #04304A;
+      text-transform: uppercase;
+
+      padding-top: 6px;
+
+      // line-height: 24px;
+    }
+
+    .separator {
+      flex: 1;
+    }
+
+    .maximize-btn {
+      width: 24px;
+      height: 24px;
+      border-style: none;
+      outline: none;
+      background: url('assets/maximize.svg') 0 0 no-repeat;
+      cursor: pointer;
+      margin: 0 10px;
+
+      &:hover {
+        background: url('assets/maximize-over.svg') 0 0 no-repeat;
+      }
+
+      &:disabled {
+        cursor: default;
+        opacity: 0.2;
+      }
+
+      &.minimize {
+        background: url('assets/minimize.svg') 0 0 no-repeat;
+
+        &:hover {
+          background: url('assets/minimize-over.svg') 0 0 no-repeat;
+        }
+      }
+    }
+
+    .delete-btn {
+      width: 24px;
+      height: 24px;
+      border-style: none;
+      outline: none;
+      background: url('assets/close.svg') 0 0 no-repeat;
+      cursor: pointer;
+
+      &:hover {
+        background: url('assets/close-over.svg') 0 0 no-repeat;
+      }
+
+      &:disabled {
+        cursor: default;
+        opacity: 0.2;
+      }
+    }
+  }
+
+  .pod-canvas {
+    padding: 10px;
+  }
+
+  &.dragging {
+    z-index: 999;
+    -webkit-transition: none
+  }
+}
